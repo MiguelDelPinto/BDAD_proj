@@ -1,8 +1,8 @@
 # Ignore UML Backups
 
-
-
 /UML/*.vpp.*
 /UML/*.jpg
 
 /*/*.pdf
+
+/BaseDados/*.db
