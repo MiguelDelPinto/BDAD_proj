@@ -103,3 +103,63 @@ CREATE TABLE Exemplar(
 CREATE TABLE TipoDeManutencao(
     nome TEXT PRIMARY KEY UNIQUE
 );
+
+CREATE TABLE AtoDeManutencao(
+    ccFuncionario INTEGER REFERENCES Funcionario(cartaoCidadao) NOT NULL,
+    nomeManutencao TEXT REFERENCES TipoDeManutencao(nome) NOT NULL,
+    idExemplar INTEGER REFERENCES Exemplar(idExemplar) NOT NULL,
+    PRIMARY KEY(ccFuncionario, nomeManutencao, idExemplar)
+);
+
+CREATE TABLE Publicacao(
+    idPublicacao INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    genero TEXT,
+    idadeMinima INTEGER
+);
+
+CREATE TABLE Livro(
+    idPublicacao INTEGER PRIMARY KEY REFERENCES Publicacao(idPublicacao) NOT NULL,
+    editora TEXT NOT NULL,
+    edicao INTEGER CHECK (edicao > 0) NOT NULL
+);
+
+CREATE TABLE Autor(
+    idAutor INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL
+);
+
+
+CREATE TABLE Autoria(
+    idPublicacao INTEGER REFERENCES Publicacao(idPublicacao) NOT NULL,
+    idAutor INTEGER REFERENCES Autor(idAutor) NOT NULL,
+    PRIMARY KEY(idPublicacao, idAutor)
+);
+
+CREATE TABLE Software(
+    idPublicacao INTEGER PRIMARY KEY REFERENCES Publicacao(idPublicacao) NOT NULL,
+    versao FLOAT NOT NULL CHECK(versao > 0),
+    developer TEXT NOT NULL
+);
+
+CREATE TABLE Album(
+    idPublicacao INTEGER PRIMARY KEY REFERENCES Publicacao(idPublicacao) NOT NULL,
+    produtor TEXT NOT NULL
+);
+
+CREATE TABLE Artista(
+    idArtista INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL
+);
+
+CREATE TABLE Interpreta(
+    idPublicacao INTEGER REFERENCES Publicacao(idPublicacao) NOT NULL,
+    idArtista INTEGER REFERENCES Artista(idArtista) NOT NULL,
+    PRIMARY KEY(idPublicacao, idArtista)
+);
+
+CREATE TABLE Filme(
+    idPublicacao INTEGER PRIMARY KEY REFERENCES Publicacao(idPublicacao) NOT NULL,
+    realizador TEXT NOT NULL,
+    estudio TEXT NOT NULL
+);
