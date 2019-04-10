@@ -20,6 +20,7 @@ DROP TABLE IF EXISTS Artista;
 DROP TABLE IF EXISTS Interpreta;
 DROP TABLE IF EXISTS Filme;
 DROP TABLE IF EXISTS Modelo;
+DROP TABLE IF EXISTS RequisicaoDeExemplar;
 
 CREATE TABLE Pessoa(
     cartaoCidadao INTEGER UNIQUE PRIMARY KEY,
@@ -29,7 +30,7 @@ CREATE TABLE Pessoa(
 );
 
 CREATE TABLE Utilizador(
-    cartaoCidado INTEGER UNIQUE PRIMARY KEY REFERENCES Pessoa(cartaoCidadao)
+    cartaoCidadao INTEGER UNIQUE PRIMARY KEY REFERENCES Pessoa(cartaoCidadao)
 );
 
 CREATE TABLE Funcionario(
@@ -165,4 +166,10 @@ CREATE TABLE Filme(
     idPublicacao INTEGER PRIMARY KEY REFERENCES Publicacao(idPublicacao) NOT NULL,
     realizador TEXT NOT NULL,
     estudio TEXT NOT NULL
+);
+
+CREATE TABLE RequisicaoDeExemplar(
+    idRequisicao INTEGER REFERENCES Requisicao(idRequisicao) NOT NULL,
+    idExemplar INTEGER REFERENCES Exemplar(idExemplar) NOT NULL,
+    PRIMARY KEY (idRequisicao, idExemplar)
 );

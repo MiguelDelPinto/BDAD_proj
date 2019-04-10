@@ -234,6 +234,18 @@ INSERT INTO Requisicao
 INSERT INTO Requisicao
     (data, hora, ccUtilizador) VALUES 
     ('2019-04-20', '10:00', 15447030);
+    
+INSERT INTO RequisicaoDeExemplar
+    (idRequisicao, idExemplar) VALUES
+    (1, 1);
+    
+INSERT INTO RequisicaoDeExemplar
+    (idRequisicao, idExemplar) VALUES
+    (2, 2);
+    
+INSERT INTO RequisicaoDeExemplar
+    (idRequisicao, idExemplar) VALUES
+    (3, 3);
 
 INSERT INTO TipoDeManutencao
     (nome) VALUES ('Limpeza');
@@ -249,30 +261,95 @@ INSERT INTO AtoDeManutencao
     (ccFuncionario, nomeManutencao, idExemplar) VALUES
     (14591246, 'Limpeza', 2);
 
---CREATE TABLE Software(
---    idPublicacao INTEGER PRIMARY KEY REFERENCES Publicacao(idPublicacao) NOT NULL,
---    versao FLOAT NOT NULL CHECK(versao > 0),
---    developer TEXT NOT NULL
---);
+INSERT INTO Publicacao --Publicacao 7
+    (nome, genero, idadeMinima) VALUES
+    ('Windows 10', 'Sistema Operativo', 3);
 
---CREATE TABLE Album(
---    idPublicacao INTEGER PRIMARY KEY REFERENCES Publicacao(idPublicacao) NOT NULL,
---    produtor TEXT NOT NULL
---);
+INSERT INTO Software
+    (idPublicacao, versao, developer) VALUES
+    (7, 1.0, 'Microsoft');
+    
+INSERT INTO Publicacao --Publicacao 8
+    (nome, genero, idadeMinima) VALUES
+    ('Dakar 18', 'Jogo - Desporto Motorizado', 3);
 
---CREATE TABLE Artista(
---    idArtista INTEGER PRIMARY KEY AUTOINCREMENT,
---    nome TEXT NOT NULL
---);
+INSERT INTO Software
+    (idPublicacao, versao, developer) VALUES
+    (8, 1.3, 'Bigmoon Entertainment');
 
---CREATE TABLE Interpreta(
---    idPublicacao INTEGER REFERENCES Publicacao(idPublicacao) NOT NULL,
---    idArtista INTEGER REFERENCES Artista(idArtista) NOT NULL,
---    PRIMARY KEY(idPublicacao, idArtista)
---);
+INSERT INTO Publicacao --Publicacao 9
+    (nome, genero, idadeMinima) VALUES
+    ('Fortnite', 'Jogo - Ação', 3);
+    
+INSERT INTO Software
+    (idPublicacao, versao, developer) VALUES
+    (9, 2.0, 'Epic Games');
+    
+INSERT INTO Publicacao --Publicacao 10
+    (nome, genero, idadeMinima) VALUES
+    ('O Meu Refogado', 'Música - Folclore', 3);
+    
+INSERT INTO Album
+    (idPublicacao, produtor) VALUES
+    (10, ''); --MUDAR
+    
+INSERT INTO Artista --Artista 1
+    (nome) VALUES ('Quim Barreiros');
+    
+INSERT INTO Interpreta
+    (idPublicacao, idArtista) VALUES
+    (10, 1);
+    
+INSERT INTO Publicacao --Publicacao 11
+    (nome, genero, idadeMinima) VALUES
+    ('Paranoid', 'Música - Heavy Metal', 12);
+    
+INSERT INTO Album
+    (idPublicacao, produtor) VALUES
+    (11, 'Rodger Bain');
+    
+INSERT INTO Artista --Artista 2
+    (nome) VALUES ('Black Sabbath');
+    
+INSERT INTO Interpreta
+    (idPublicacao, idArtista) VALUES
+    (11, 2);
 
---CREATE TABLE Filme(
---    idPublicacao INTEGER PRIMARY KEY REFERENCES Publicacao(idPublicacao) NOT NULL,
---    realizador TEXT NOT NULL,
---    estudio TEXT NOT NULL
---);
+INSERT INTO Publicacao --Publicacao 12
+    (nome, genero, idadeMinima) VALUES
+    ('Circo de Feras', 'Música - Rock', 7);
+
+INSERT INTO Album
+    (idPublicacao, produtor) VALUES
+    (12, 'Carlos Maria Trindade');
+    
+INSERT INTO Artista --Artista 3
+    (nome) VALUES ('Xutos & Pontapés');
+    
+INSERT INTO Interpreta
+    (idPublicacao, idArtista) VALUES
+    (12, 3);
+
+INSERT INTO Publicacao --Publicacao 13
+    (nome, genero, idadeMinima) VALUES
+    ('Captain Marvel', 'Filme - Ação', 12);
+    
+INSERT INTO Filme --Filme 1
+    (idPublicacao, realizador, estudio) VALUES
+    (13, 'Anna Boden; Ryan Fleck', 'Marvel Studios');
+    
+INSERT INTO Publicacao --Publicacao 14
+    (nome, genero, idadeMinima) VALUES
+    ('Bean', 'Filme - Comédia', 12);
+    
+INSERT INTO Filme --Filme 2
+    (idPublicacao, realizador, estudio) VALUES
+    (14, 'Mel Smith', 'Universal Pictures');
+    
+INSERT INTO Publicacao --Publicacao 15
+    (nome, genero, idadeMinima) VALUES
+    ('The Shawshank Redemption', 'Filme - Drama', 12);
+    
+INSERT INTO Filme --Filme 3
+    (idPublicacao, realizador, estudio) VALUES
+    (15, 'Frank Darabont', 'Columbia Pictures');
