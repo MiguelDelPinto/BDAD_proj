@@ -19,8 +19,7 @@ DROP TABLE IF EXISTS Album;
 DROP TABLE IF EXISTS Artista;
 DROP TABLE IF EXISTS Interpreta;
 DROP TABLE IF EXISTS Filme;
-
-PRAGMA foreign_keys = ON;
+DROP TABLE IF EXISTS Modelo;
 
 CREATE TABLE Pessoa(
     cartaoCidadao INTEGER UNIQUE PRIMARY KEY,
@@ -65,9 +64,13 @@ CREATE TABLE ReservaDeSala(
 
 CREATE TABLE Equipamento(
     idEquipamento INTEGER PRIMARY KEY AUTOINCREMENT,
-    marca TEXT,
-    modelo TEXT,
-    numeroSala INTEGER REFERENCES Sala(numero),
+    modelo TEXT REFERENCES Modelo(nomeModelo),
+    numeroSala INTEGER REFERENCES Sala(numero)
+);
+
+CREATE TABLE Modelo(
+    nomeModelo TEXT NOT NULL,
+    marca TEXT NOT NULL,
     nomeTipo TEXT REFERENCES TipoEquipamento(nome)
 );
 
