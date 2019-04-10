@@ -81,25 +81,91 @@ INSERT INTO Publicacao
     (nome, genero, idadeMinima) VALUES
     ('Les Aventures de Tintin', 'Aventura', 6);
     
+INSERT INTO Livro
+    (idPublicacao, editora, edicao) VALUES
+    (1, 'Editorial Verbo', 1);
+    
+INSERT INTO Autor
+    (nome) VALUES ('Hergé');
+    
+INSERT INTO Autoria
+    (idPublicacao, idAutor) VALUES
+    (1, 1);
+    
 INSERT INTO Publicacao
     (nome, genero, idadeMinima) VALUES
     ('A Revolução do Algoritmo Mestre', 'Tecnologia', 12);
     
+INSERT INTO Livro
+    (idPublicacao, editora, edicao) VALUES
+    (2, 'Manuscrito Editora', 1);
+    
+INSERT INTO Autor
+    (nome) VALUES ('Pedro Domingos');
+    
+INSERT INTO Autoria
+    (idPublicacao, idAutor) VALUES
+    (2, 2);
+
 INSERT INTO Publicacao
     (nome, genero, idadeMinima) VALUES
     ('Big C++', 'Tecnologia', 16);
+    
+INSERT INTO Livro
+    (idPublicacao, editora, edicao) VALUES
+    (3, 'Wiley', 1);
+    
+INSERT INTO Autor
+    (nome) VALUES ('Timothy A. Budd and Cay S. Horstmann');
+    
+INSERT INTO Autoria
+    (idPublicacao, idAutor) VALUES
+    (3, 3);
     
 INSERT INTO Publicacao
     (nome, genero, idadeMinima) VALUES
     ('Assim Falou Zaratustra', 'Filosofia', 18);
     
+INSERT INTO Livro
+    (idPublicacao, editora, edicao) VALUES
+    (4, 'Guimarães Editores', 1);
+
+INSERT INTO Autor
+    (nome) VALUES ('Friedrich Nietzche');
+    
+INSERT INTO Autoria
+    (idPublicacao, idAutor) VALUES
+    (4, 4);
+
 INSERT INTO Publicacao
     (nome, genero, idadeMinima) VALUES
     ('Mein Kampf', 'Biografia', 18);
+    
+INSERT INTO Livro
+    (idPublicacao, editora, edicao) VALUES
+    (5, 'Eher Verlag', 2);
+    
+INSERT INTO Autor
+    (nome) VALUES ('Adolf Hitler');
+    
+INSERT INTO Autoria
+    (idPublicacao, idAutor) VALUES
+    (5, 5);
 
 INSERT INTO Publicacao
     (nome, genero, idadeMinima) VALUES
     ('O Deus das Moscas', 'Romance', 12);
+
+INSERT INTO Livro
+    (idPublicacao, editora, edicao) VALUES
+    (6, 'BIS', 3);
+    
+INSERT INTO Autor
+    (nome) VALUES ('William Golding');
+    
+INSERT INTO Autoria
+    (idPublicacao, idAutor) VALUES
+    (6, 6);
 
 INSERT INTO Exemplar
     (possivelRequisitar, idSala, idPublicacao) VALUES
@@ -133,58 +199,55 @@ INSERT INTO TipoEquipamento
     (nome, proposito) VALUES
     ('Projetor', 'Projetar imagem');
     
+INSERT INTO Modelo
+    (nomeModelo, marca, nomeTipo) VALUES
+    ('K56CB', 'ASUSTeK COMPUTER INC.', 'Computador');
+    
+INSERT INTO Modelo
+    (nomeModelo, marca, nomeTipo) VALUES
+    ('Home Cinema', 'Epson', 'Projetor');
 
---CREATE TABLE Equipamento(
---    idEquipamento INTEGER PRIMARY KEY AUTOINCREMENT,
---    modelo TEXT REFERENCES Modelo(nomeModelo),
---    numeroSala INTEGER REFERENCES Sala(numero) -- ,
---);
+INSERT INTO Equipamento
+    (modelo, numeroSala) VALUES
+    ('K56CB', 2);
+    
+INSERT INTO Equipamento
+    (modelo, numeroSala) VALUES
+    ('K56CB', 2);
+    
+INSERT INTO Equipamento
+    (modelo, numeroSala) VALUES
+    ('K56CB', 1);
+    
+INSERT INTO Equipamento
+    (modelo, numeroSala) VALUES
+    ('Home Cinema', 1);
+    
+INSERT INTO Requisicao
+    (data, hora, ccUtilizador) VALUES
+    ('2019-04-13', '16:30', 15098765);
+    
+INSERT INTO Requisicao
+    (data, hora, ccUtilizador) VALUES 
+    ('2019-04-12', '15:00', 15001234);
 
---CREATE TABLE Modelo(
---    nomeModelo TEXT NOT NULL,
---    marca TEXT NOT NULL,
---    nomeTipo TEXT REFERENCES TipoEquipamento(nome)
---);
+INSERT INTO Requisicao
+    (data, hora, ccUtilizador) VALUES 
+    ('2019-04-20', '10:00', 15447030);
 
+INSERT INTO TipoDeManutencao
+    (nome) VALUES ('Limpeza');
+    
+INSERT INTO TipoDeManutencao
+    (nome) VALUES ('Restauro');
 
---CREATE TABLE Requisicao(
---    idRequisicao INTEGER PRIMARY KEY AUTOINCREMENT,
---    data DATE NOT NULL,
---    hora TIME NOT NULL,
---    diasAtraso INTEGER,
---    multa FLOAT,
---    ccUtilizador INTEGER REFERENCES Utilizador(cartaoCidadao)
---);
-
-
---CREATE TABLE TipoDeManutencao(
---    nome TEXT PRIMARY KEY UNIQUE
---);
-
---CREATE TABLE AtoDeManutencao(
---    ccFuncionario INTEGER REFERENCES Funcionario(cartaoCidadao) NOT NULL,
---    nomeManutencao TEXT REFERENCES TipoDeManutencao(nome) NOT NULL,
---    idExemplar INTEGER REFERENCES Exemplar(idExemplar) NOT NULL,
---   PRIMARY KEY(ccFuncionario, nomeManutencao, idExemplar)
---);
-
---CREATE TABLE Livro(
---    idPublicacao INTEGER PRIMARY KEY REFERENCES Publicacao(idPublicacao) NOT NULL,
---    editora TEXT NOT NULL,
---    edicao INTEGER CHECK (edicao > 0) NOT NULL
---);
-
---CREATE TABLE Autor(
---    idAutor INTEGER PRIMARY KEY AUTOINCREMENT,
---    nome TEXT NOT NULL
---);
-
-
---CREATE TABLE Autoria(
---    idPublicacao INTEGER REFERENCES Publicacao(idPublicacao) NOT NULL,
---    idAutor INTEGER REFERENCES Autor(idAutor) NOT NULL,
---    PRIMARY KEY(idPublicacao, idAutor)
---);
+INSERT INTO AtoDeManutencao
+    (ccFuncionario, nomeManutencao, idExemplar) VALUES
+    (15209096, 'Restauro', 1);
+    
+INSERT INTO AtoDeManutencao
+    (ccFuncionario, nomeManutencao, idExemplar) VALUES
+    (14591246, 'Limpeza', 2);
 
 --CREATE TABLE Software(
 --    idPublicacao INTEGER PRIMARY KEY REFERENCES Publicacao(idPublicacao) NOT NULL,
