@@ -207,9 +207,9 @@ INSERT INTO Modelo
     (nomeModelo, marca, nomeTipo) VALUES
     ('Home Cinema', 'Epson', 'Projetor');
 
---INSERT INTO Equipamento  -- ESTÁ A DAR UM ERRO
---    (modelo, numeroSala) VALUES
---    ('K56CB', 2);
+INSERT INTO Equipamento
+    (modelo, numeroSala) VALUES
+    ('K56CB', 2);
     
 INSERT INTO Equipamento
     (modelo, numeroSala) VALUES
