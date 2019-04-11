@@ -70,7 +70,7 @@ CREATE TABLE Equipamento(
 );
 
 CREATE TABLE Modelo(
-    nomeModelo TEXT NOT NULL,
+    nomeModelo TEXT PRIMARY KEY NOT NULL,
     marca TEXT NOT NULL,
     nomeTipo TEXT REFERENCES TipoEquipamento(nome)
 );
