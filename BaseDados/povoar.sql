@@ -128,31 +128,47 @@ INSERT INTO Sala
     
 INSERT INTO Sala
     (numero, tipo, capacidade) VALUES
-    (10, 'Cinema', 50);
+    (10, 'Cinema/Espetáculos', 50);
   
-INSERT INTO Reserva
+INSERT INTO Reserva --Reserva 1
     (motivo, data, hora, duracao, ccUtilizador) VALUES
     ('Clube de Leitura', '2019-04-13', '10:00', 2, 15447030);
     
-INSERT INTO Reserva
-    (motivo, data, hora, duracao, ccUtilizador) VALUES
-    ('Workshop de Introdução à Física Quântica', '2019-04-12', '14:00', 3, 15001234);
-    
-INSERT INTO Reserva
-    (motivo, data, hora, duracao, ccUtilizador) VALUES
-    ('Conferência sobre Bases de Dados', '2019-04-12', '11:30', 2, 15098765);
-  
 INSERT INTO ReservaDeSala
     (idReserva, numeroSala) VALUES
     (1, 4);
-
+    
+INSERT INTO Reserva --Reserva 2
+    (motivo, data, hora, duracao, ccUtilizador) VALUES
+    ('Workshop de Introdução à Física Quântica', '2019-04-12', '14:00', 3, 15001234);
+    
 INSERT INTO ReservaDeSala
     (idReserva, numeroSala) VALUES
     (2, 2);
     
+INSERT INTO Reserva --Reserva 3
+    (motivo, data, hora, duracao, ccUtilizador) VALUES
+    ('Conferência sobre Bases de Dados', '2019-04-12', '11:30', 2, 15098765);
+    
 INSERT INTO ReservaDeSala
     (idReserva, numeroSala) VALUES
-    (3, 1);
+    (3, 1);    
+    
+INSERT INTO Reserva --Reserva 4
+    (motivo, data, hora, duracao, ccUtilizador) VALUES
+    ('Beijos e Abraços', '2019-04-25', '14:30', 3, 150019269);
+    
+INSERT INTO ReservaDeSala
+    (idReserva, numeroSala) VALUES
+    (4, 1);
+    
+INSERT INTO Reserva --Reserva 5
+    (motivo, data, hora, duracao, ccUtilizador) VALUES
+    ('Stand-up Comedy', '2019-05-01', '15:00', 1, 15102938);
+    
+INSERT INTO ReservaDeSala
+    (idReserva, numeroSala) VALUES
+    (5, 10);
   
 INSERT INTO Publicacao
     (nome, genero, idadeMinima) VALUES
