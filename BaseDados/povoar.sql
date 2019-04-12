@@ -271,7 +271,7 @@ INSERT INTO Software
     
 INSERT INTO Publicacao --Publicacao 8
     (nome, genero, idadeMinima) VALUES
-    ('Dakar 18', 'Jogo - Desporto Motorizado', 3);
+    ('Dakar 18', 'Desporto Motorizado', 3);
 
 INSERT INTO Software
     (idPublicacao, versao, developer) VALUES
@@ -279,7 +279,7 @@ INSERT INTO Software
 
 INSERT INTO Publicacao --Publicacao 9
     (nome, genero, idadeMinima) VALUES
-    ('Fortnite', 'Jogo - Ação', 3);
+    ('Fortnite', 'Ação', 3);
     
 INSERT INTO Software
     (idPublicacao, versao, developer) VALUES
@@ -287,7 +287,7 @@ INSERT INTO Software
     
 INSERT INTO Publicacao --Publicacao 10
     (nome, genero, idadeMinima) VALUES
-    ('O Meu Refogado', 'Música - Folclore', 3);
+    ('O Meu Refogado', 'Folclore', 3);
     
 INSERT INTO Album
     (idPublicacao, produtor) VALUES
@@ -302,7 +302,7 @@ INSERT INTO Interpreta
     
 INSERT INTO Publicacao --Publicacao 11
     (nome, genero, idadeMinima) VALUES
-    ('Paranoid', 'Música - Heavy Metal', 12);
+    ('Paranoid', 'Heavy Metal', 12);
     
 INSERT INTO Album
     (idPublicacao, produtor) VALUES
@@ -317,7 +317,7 @@ INSERT INTO Interpreta
 
 INSERT INTO Publicacao --Publicacao 12
     (nome, genero, idadeMinima) VALUES
-    ('Circo de Feras', 'Música - Rock', 7);
+    ('Circo de Feras', 'Rock', 7);
 
 INSERT INTO Album
     (idPublicacao, produtor) VALUES
@@ -332,7 +332,7 @@ INSERT INTO Interpreta
 
 INSERT INTO Publicacao --Publicacao 13
     (nome, genero, idadeMinima) VALUES
-    ('Captain Marvel', 'Filme - Ação', 12);
+    ('Captain Marvel', 'Ação', 12);
     
 INSERT INTO Filme --Filme 1
     (idPublicacao, realizador, estudio) VALUES
@@ -340,7 +340,7 @@ INSERT INTO Filme --Filme 1
     
 INSERT INTO Publicacao --Publicacao 14
     (nome, genero, idadeMinima) VALUES
-    ('Bean', 'Filme - Comédia', 12);
+    ('Bean', 'Comédia', 12);
     
 INSERT INTO Filme --Filme 2
     (idPublicacao, realizador, estudio) VALUES
@@ -348,8 +348,24 @@ INSERT INTO Filme --Filme 2
     
 INSERT INTO Publicacao --Publicacao 15
     (nome, genero, idadeMinima) VALUES
-    ('The Shawshank Redemption', 'Filme - Drama', 12);
+    ('The Shawshank Redemption', 'Drama', 12);
     
 INSERT INTO Filme --Filme 3
     (idPublicacao, realizador, estudio) VALUES
     (15, 'Frank Darabont', 'Columbia Pictures');
+    
+INSERT INTO Publicacao --Publicacao 16
+    (nome, genero, idadeMinima) VALUES
+    ('Ted 2', 'Comédia', 12);
+    
+INSERT INTO Filme --Filme 4
+    (idPublicacao, realizador, estudio) VALUES
+    (16, 'Seth MacFarlane', 'Universal Studios');
+    
+INSERT INTO Publicacao --Publicacao 17
+    (nome, genero, idadeMinima) VALUES
+    ('Interstellar', 'Ficção Científica', 12);
+    
+INSERT INTO Filme --Filme 5
+    (idPublicacao, realizador, estudio) VALUES
+    (17, 'Christopher Nolan', 'Warner Bros. Pictures');
