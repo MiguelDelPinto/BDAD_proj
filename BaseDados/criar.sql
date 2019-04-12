@@ -30,11 +30,11 @@ CREATE TABLE Pessoa(
 );
 
 CREATE TABLE Utilizador(
-    cartaoCidadao INTEGER UNIQUE PRIMARY KEY REFERENCES Pessoa(cartaoCidadao)
+    cartaoCidadao INTEGER UNIQUE PRIMARY KEY REFERENCES Pessoa(cartaoCidadao) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Funcionario(
-    cartaoCidadao INTEGER UNIQUE PRIMARY KEY REFERENCES Pessoa(cartaoCidadao),
+    cartaoCidadao INTEGER UNIQUE PRIMARY KEY REFERENCES Pessoa(cartaoCidadao) ON DELETE CASCADE ON UPDATE CASCADE,
     salario FLOAT,
     contribuinte INTEGER NOT NULL UNIQUE,
     morada TEXT NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE Reserva(
     data DATE NOT NULL,
     hora TIME NOT NULL,
     duracao INTEGER NOT NULL,
-    ccUtilizador INTEGER REFERENCES Utilizador(cartaoCidadao)
+    ccUtilizador INTEGER REFERENCES Utilizador(cartaoCidadao) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Sala(
@@ -58,21 +58,21 @@ CREATE TABLE Sala(
 );
 
 CREATE TABLE ReservaDeSala(
-    idReserva INTEGER REFERENCES Reserva(idReserva),
-    numeroSala INTEGER REFERENCES Sala(numero),
+    idReserva INTEGER REFERENCES Reserva(idReserva) ON DELETE CASCADE ON UPDATE CASCADE,
+    numeroSala INTEGER REFERENCES Sala(numero) ON DELETE CASCADE ON UPDATE CASCADE,
     PRIMARY KEY(idReserva, numeroSala) 
 );
 
 CREATE TABLE Equipamento(
     idEquipamento INTEGER PRIMARY KEY AUTOINCREMENT,
-    modelo TEXT REFERENCES Modelo(nomeModelo),
-    numeroSala INTEGER REFERENCES Sala(numero)
+    modelo TEXT REFERENCES Modelo(nomeModelo) ON DELETE CASCADE ON UPDATE CASCADE,
+    numeroSala INTEGER REFERENCES Sala(numero) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Modelo(
     nomeModelo TEXT PRIMARY KEY NOT NULL,
     marca TEXT NOT NULL,
-    nomeTipo TEXT REFERENCES TipoEquipamento(nome)
+    nomeTipo TEXT REFERENCES TipoEquipamento(nome) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE TipoEquipamento(
@@ -93,14 +93,14 @@ CREATE TABLE Requisicao(
     hora TIME NOT NULL,
     diasAtraso INTEGER,
     multa FLOAT,
-    ccUtilizador INTEGER REFERENCES Utilizador(cartaoCidadao)
+    ccUtilizador INTEGER REFERENCES Utilizador(cartaoCidadao) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Exemplar(
     idExemplar INTEGER PRIMARY KEY AUTOINCREMENT,
     possivelRequisitar INTEGER,
-    idSala INTEGER REFERENCES Sala(numero),
-    idPublicacao INTEGER REFERENCES Publicacao(idPublicacao),
+    idSala INTEGER REFERENCES Sala(numero) ON DELETE CASCADE ON UPDATE CASCADE,
+    idPublicacao INTEGER REFERENCES Publicacao(idPublicacao) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT boolean CHECK (possivelRequisitar = 0 OR possivelRequisitar = 1)
 );
 
@@ -109,9 +109,9 @@ CREATE TABLE TipoDeManutencao(
 );
 
 CREATE TABLE AtoDeManutencao(
-    ccFuncionario INTEGER REFERENCES Funcionario(cartaoCidadao) NOT NULL,
-    nomeManutencao TEXT REFERENCES TipoDeManutencao(nome) NOT NULL,
-    idExemplar INTEGER REFERENCES Exemplar(idExemplar) NOT NULL,
+    ccFuncionario INTEGER NOT NULL REFERENCES Funcionario(cartaoCidadao) ON DELETE CASCADE ON UPDATE CASCADE,
+    nomeManutencao TEXT NOT NULL REFERENCES TipoDeManutencao(nome) ON DELETE CASCADE ON UPDATE CASCADE,
+    idExemplar INTEGER NOT NULL REFERENCES Exemplar(idExemplar) ON DELETE CASCADE ON UPDATE CASCADE,
     PRIMARY KEY(ccFuncionario, nomeManutencao, idExemplar)
 );
 
@@ -123,8 +123,8 @@ CREATE TABLE Publicacao(
 );
 
 CREATE TABLE Livro(
-    idPublicacao INTEGER PRIMARY KEY REFERENCES Publicacao(idPublicacao) NOT NULL,
-    editora TEXT NOT NULL,
+    idPublicacao INTEGER PRIMARY KEY NOT NULL REFERENCES Publicacao(idPublicacao) ON DELETE CASCADE ON UPDATE CASCADE,
+    editora TEXT NOT NULL, 
     edicao INTEGER CHECK (edicao > 0) NOT NULL
 );
 
@@ -135,19 +135,19 @@ CREATE TABLE Autor(
 
 
 CREATE TABLE Autoria(
-    idPublicacao INTEGER REFERENCES Publicacao(idPublicacao) NOT NULL,
-    idAutor INTEGER REFERENCES Autor(idAutor) NOT NULL,
+    idPublicacao INTEGER NOT NULL REFERENCES Publicacao(idPublicacao) ON DELETE CASCADE ON UPDATE CASCADE,
+    idAutor INTEGER NOT NULL REFERENCES Autor(idAutor) ON DELETE CASCADE ON UPDATE CASCADE,
     PRIMARY KEY(idPublicacao, idAutor)
 );
 
 CREATE TABLE Software(
-    idPublicacao INTEGER PRIMARY KEY REFERENCES Publicacao(idPublicacao) NOT NULL,
+    idPublicacao INTEGER PRIMARY KEY NOT NULL REFERENCES Publicacao(idPublicacao) ON DELETE CASCADE ON UPDATE CASCADE,
     versao FLOAT NOT NULL CHECK(versao > 0),
     developer TEXT NOT NULL
 );
 
 CREATE TABLE Album(
-    idPublicacao INTEGER PRIMARY KEY REFERENCES Publicacao(idPublicacao) NOT NULL,
+    idPublicacao INTEGER PRIMARY KEY NOT NULL REFERENCES Publicacao(idPublicacao) ON DELETE CASCADE ON UPDATE CASCADE,
     produtor TEXT NOT NULL
 );
 
@@ -157,19 +157,19 @@ CREATE TABLE Artista(
 );
 
 CREATE TABLE Interpreta(
-    idPublicacao INTEGER REFERENCES Publicacao(idPublicacao) NOT NULL,
-    idArtista INTEGER REFERENCES Artista(idArtista) NOT NULL,
+    idPublicacao INTEGER NOT NULL REFERENCES Publicacao(idPublicacao) ON DELETE CASCADE ON UPDATE CASCADE,
+    idArtista INTEGER NOT NULL REFERENCES Artista(idArtista) ON DELETE CASCADE ON UPDATE CASCADE,
     PRIMARY KEY(idPublicacao, idArtista)
 );
 
 CREATE TABLE Filme(
-    idPublicacao INTEGER PRIMARY KEY REFERENCES Publicacao(idPublicacao) NOT NULL,
+    idPublicacao INTEGER PRIMARY KEY NOT NULL REFERENCES Publicacao(idPublicacao) ON DELETE CASCADE ON UPDATE CASCADE,
     realizador TEXT NOT NULL,
     estudio TEXT NOT NULL
 );
 
 CREATE TABLE RequisicaoDeExemplar(
-    idRequisicao INTEGER REFERENCES Requisicao(idRequisicao) NOT NULL,
-    idExemplar INTEGER REFERENCES Exemplar(idExemplar) NOT NULL,
+    idRequisicao INTEGER NOT NULL REFERENCES Requisicao(idRequisicao) ON DELETE CASCADE ON UPDATE CASCADE,
+    idExemplar INTEGER NOT NULL REFERENCES Exemplar(idExemplar) ON DELETE CASCADE ON UPDATE CASCADE,
     PRIMARY KEY (idRequisicao, idExemplar)
 );
