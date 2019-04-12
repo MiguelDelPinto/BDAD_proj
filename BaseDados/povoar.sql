@@ -4,11 +4,11 @@ INSERT INTO Pessoa
     (cartaoCidadao, nome, dataNascimento, telefone) VALUES
     (15209096, 'Pedro Esteves', '1999-10-10', 927992692);
 
-INSERT INTO Pessoa
+INSERT INTO Pessoa 
     (cartaoCidadao, nome, dataNascimento, telefone) VALUES
     (14591246, 'Miguel Pinto', '1999-10-06', 917146432);
     
-INSERT INTO Pessoa
+INSERT INTO Pessoa 
     (cartaoCidadao, nome, dataNascimento, telefone) VALUES
     (15447030, 'Bruno Micaelo', '1999-07-25', 918056656);
     
@@ -20,6 +20,34 @@ INSERT INTO Pessoa
     (cartaoCidadao, nome, dataNascimento, telefone) VALUES
     (15098765, 'Joao Rocha', '1993-05-05', 931234567);
 
+INSERT INTO Pessoa
+    (cartaoCidadao, nome, dataNascimento, telefone) VALUES
+    (15166638, 'Inês Alves', '1998-07-17', 930624427);    
+
+INSERT INTO Pessoa
+    (cartaoCidadao, nome, dataNascimento, telefone) VALUES
+    (15212367, 'João Silva', '1992-06-01', 912345678);
+    
+INSERT INTO Pessoa
+    (cartaoCidadao, nome, dataNascimento, telefone) VALUES
+    (15102938, 'Fernando Rocha', '1975-07-02', 917595023);
+
+INSERT INTO Pessoa
+    (cartaoCidadao, nome, dataNascimento, telefone) VALUES
+    (150019269, 'Marcelo de Sousa', '1948-12-12', 213614600);
+    
+INSERT INTO Pessoa
+    (cartaoCidadao, nome, dataNascimento, telefone) VALUES
+    (14653724, 'Mário Mesquita', '1999-03-26', 917024920);
+    
+INSERT INTO Pessoa
+    (cartaoCidadao, nome, dataNascimento, telefone) VALUES
+    (14123456, 'Daniela Alves', '1991-05-29', 919876543);
+    
+INSERT INTO Pessoa
+    (cartaoCidadao, nome, dataNascimento, telefone) VALUES
+    (14523478, 'Liliana Ferreira', '1970-03-25', 924151678);
+
 INSERT INTO Utilizador
     (cartaoCidadao) VALUES (15098765);
     
@@ -28,6 +56,15 @@ INSERT INTO Utilizador
 
 INSERT INTO Utilizador
     (cartaoCidadao) VALUES (15447030);
+    
+INSERT INTO Utilizador
+    (cartaoCidadao) VALUES (15166638);
+
+INSERT INTO Utilizador
+    (cartaoCidadao) VALUES (15102938);
+
+INSERT INTO Utilizador
+    (cartaoCidadao) VALUES (150019269);
 
 INSERT INTO Funcionario
     (cartaoCidadao, salario, contribuinte, morada, horaEntrada, horaSaida) VALUES 
@@ -37,9 +74,25 @@ INSERT INTO Funcionario
     (cartaoCidadao, salario, contribuinte, morada, horaEntrada, horaSaida) VALUES 
     (14591246, 1500, 233541209, 'Rua Dr. António Macedo', '09:00', '17:00');
 
+INSERT INTO Funcionario
+    (cartaoCidadao, salario, contribuinte, morada, horaEntrada, horaSaida) VALUES
+    (15212367, 1000, 254018637, 'Avenida da Boavista', '09:00', '17:00');
+    
+INSERT INTO Funcionario
+    (cartaoCidadao, salario, contribuinte, morada, horaEntrada, horaSaida) VALUES
+    (14653724, 1500, 273325574, 'Rua do Covêlo', '09:00', '19:00');
+
+INSERT INTO Funcionario
+    (cartaoCidadao, salario, contribuinte, morada, horaEntrada, horaSaida) VALUES
+    (14123456, 750, 273187317, 'Rua Adolfo Casais Monteiro', '14:00', '19:00');
+
+INSERT INTO Funcionario
+    (cartaoCidadao, salario, contribuinte, morada, horaEntrada, horaSaida) VALUES
+    (14523478, 3000, 224008242, 'Avenida Fernão de Magalhães', '11:00', '16:30');
+
 INSERT INTO Sala
     (numero, tipo, capacidade) VALUES
-    (1, 'Reunioes', 30);
+    (1, 'Reuniões', 30);
     
 INSERT INTO Sala
     (numero, tipo, capacidade) VALUES
@@ -52,6 +105,30 @@ INSERT INTO Sala
 INSERT INTO Sala
     (numero, tipo, capacidade) VALUES
     (4, 'Leitura', 100);
+    
+INSERT INTO Sala
+    (numero, tipo, capacidade) VALUES
+    (5, 'Leitura', 75);
+    
+INSERT INTO Sala
+    (numero, tipo, capacidade) VALUES
+    (6, 'Leitura', 300);
+    
+INSERT INTO Sala
+    (numero, tipo, capacidade) VALUES
+    (7, 'Reuniões', 50);
+    
+INSERT INTO Sala
+    (numero, tipo, capacidade) VALUES
+    (8, 'Estudo', 100);
+    
+INSERT INTO Sala
+    (numero, tipo, capacidade) VALUES
+    (9, 'Estudo', 250);
+    
+INSERT INTO Sala
+    (numero, tipo, capacidade) VALUES
+    (10, 'Cinema', 50);
   
 INSERT INTO Reserva
     (motivo, data, hora, duracao, ccUtilizador) VALUES
