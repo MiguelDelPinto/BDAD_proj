@@ -518,3 +518,33 @@ INSERT INTO Publicacao --Publicacao 17
 INSERT INTO Filme --Filme 5
     (idPublicacao, realizador, estudio) VALUES
     (17, 'Christopher Nolan', 'Warner Bros. Pictures');
+
+
+--Mais Publicações:
+INSERT INTO Publicacao --Publicacao 18
+    (nome, genero, idadeMinima) VALUES
+    ('The Elder Scrolls V: Skyrim', 'Fantasia', 16); 
+
+INSERT INTO Publicacao --Publicacao 19
+    (nome, genero, idadeMinima) VALUES
+    ('Starcraft', 'Real-time Strategy', 16);
+    
+/*
+INSERT INTO Publicacao --Publicacao 20
+    (nome, genero, idadeMinima) VALUES
+    
+INSERT INTO Publicacao --Publicacao 21
+    (nome, genero, idadeMinima) VALUES
+    
+INSERT INTO Publicacao --Publicacao 22
+    (nome, genero, idadeMinima) VALUES
+    
+INSERT INTO Publicacao --Publicacao 23
+    (nome, genero, idadeMinima) VALUES
+    
+INSERT INTO Publicacao --Publicacao 24
+    (nome, genero, idadeMinima) VALUES
+    
+INSERT INTO Publicacao --Publicacao 25
+    (nome, genero, idadeMinima) VALUES
+*/
