@@ -527,7 +527,7 @@ INSERT INTO Publicacao --Publicacao 18
 
 INSERT INTO Software
     (idPublicacao, versao, developer) VALUES
-    (18, 1.0, 'Bethesda Softworks);
+    (18, 1.0, 'Bethesda Softworks');
 
 INSERT INTO Publicacao --Publicacao 19
     (nome, genero, idadeMinima) VALUES
