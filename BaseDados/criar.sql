@@ -79,12 +79,12 @@ CREATE TABLE TipoEquipamento(
     nome TEXT UNIQUE PRIMARY KEY,
     proposito TEXT,
     CONSTRAINT nome_tipo CHECK (
-                        nome = 'Leitor de Cds' 
+                        nome = 'Leitor de CDs' 
                         OR nome = 'Leitor de DVDs' 
                         OR nome = 'Leitor de VHS'
                         OR nome = 'Computador'
                         OR nome = 'Projetor'
-                        OR nome = 'Televisao')
+                        OR nome = 'Televisão')
 );
 
 CREATE TABLE Requisicao(

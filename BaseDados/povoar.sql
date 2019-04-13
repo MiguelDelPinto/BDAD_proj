@@ -276,6 +276,22 @@ INSERT INTO TipoEquipamento
     (nome, proposito) VALUES
     ('Projetor', 'Projetar imagem');
     
+INSERT INTO TipoEquipamento
+    (nome, proposito) VALUES
+    ('Televisão', 'Visualização de vídeo');
+    
+INSERT INTO TipoEquipamento
+    (nome, proposito) VALUES
+    ('Leitor de VHS', 'Leitura de cassestes de VHS');
+    
+INSERT INTO TipoEquipamento
+    (nome, proposito) VALUES
+    ('Leitor de CDs', 'Leitura de discos do tipo CD');
+    
+INSERT INTO TipoEquipamento
+    (nome, proposito) VALUES
+    ('Leitor de DVDs', 'Leitura de discos do tipo DVD');
+        
 INSERT INTO Modelo
     (nomeModelo, marca, nomeTipo) VALUES
     ('K56CB', 'ASUSTeK COMPUTER INC.', 'Computador');
@@ -284,6 +300,46 @@ INSERT INTO Modelo
     (nomeModelo, marca, nomeTipo) VALUES
     ('Home Cinema', 'Epson', 'Projetor');
 
+INSERT INTO Modelo
+    (nomeModelo, marca, nomeTipo) VALUES
+    ('XPS 15 2019', 'Dell', 'Computador');
+
+INSERT INTO Modelo
+    (nomeModelo, marca, nomeTipo) VALUES
+    ('Macbook Pro 2018', 'Apple', 'Computador');
+    
+INSERT INTO Modelo
+    (nomeModelo, marca, nomeTipo) VALUES
+    ('43UK6200 Smart TV', 'LG', 'Televisão');
+    
+INSERT INTO Modelo
+    (nomeModelo, marca, nomeTipo) VALUES
+    ('QE85Q900 Smart TV', 'Samsung', 'Televisão');
+    
+INSERT INTO Modelo
+    (nomeModelo, marca, nomeTipo) VALUES
+    ('GSE', 'GoldStar', 'Leitor de VHS');
+    
+INSERT INTO Modelo
+    (nomeModelo, marca, nomeTipo) VALUES
+    ('VR 285', 'Philips', 'Leitor de VHS');
+    
+INSERT INTO Modelo
+    (nomeModelo, marca, nomeTipo) VALUES
+    ('DVP-SR760H', 'Sony', 'Leitor de CDs');
+    
+INSERT INTO Modelo
+    (nomeModelo, marca, nomeTipo) VALUES
+    ('NA6005', 'Marantz', 'Leitor de CDs');
+    
+INSERT INTO Modelo
+    (nomeModelo, marca, nomeTipo) VALUES
+    ('DV-2242', 'Pioneer', 'Leitor de DVDs');
+    
+INSERT INTO Modelo
+    (nomeModelo, marca, nomeTipo) VALUES
+    ('DVPSR170B', 'Sony', 'Leitor de DVDs');
+    
 INSERT INTO Equipamento
     (modelo, numeroSala) VALUES
     ('K56CB', 2);
@@ -299,6 +355,22 @@ INSERT INTO Equipamento
 INSERT INTO Equipamento
     (modelo, numeroSala) VALUES
     ('Home Cinema', 1);
+    
+INSERT INTO Equipamento
+    (modelo, numeroSala) VALUES
+    ('DVPSR170B', 6);
+    
+INSERT INTO Equipamento
+    (modelo, numeroSala) VALUES
+    ('QE85Q900 Smart TV', 10);
+    
+INSERT INTO Equipamento
+    (modelo, numeroSala) VALUES
+    ('VR 285', 7);
+    
+INSERT INTO Equipamento
+    (modelo, numeroSala) VALUES
+    ('XPS 15 2019', 3);
     
 INSERT INTO Requisicao
     (data, hora, ccUtilizador) VALUES
