@@ -34,7 +34,7 @@ INSERT INTO Pessoa
 
 INSERT INTO Pessoa
     (cartaoCidadao, nome, dataNascimento, telefone) VALUES
-    (150019269, 'Marcelo de Sousa', '1948-12-12', 213614600);
+    (15001969, 'Marcelo de Sousa', '1948-12-12', 213614600);
     
 INSERT INTO Pessoa
     (cartaoCidadao, nome, dataNascimento, telefone) VALUES
@@ -64,7 +64,7 @@ INSERT INTO Utilizador
     (cartaoCidadao) VALUES (15102938);
 
 INSERT INTO Utilizador
-    (cartaoCidadao) VALUES (150019269);
+    (cartaoCidadao) VALUES (15001969);
 
 INSERT INTO Funcionario
     (cartaoCidadao, salario, contribuinte, morada, horaEntrada, horaSaida) VALUES 
@@ -130,15 +130,15 @@ INSERT INTO Sala
     (numero, tipo, capacidade) VALUES
     (10, 'Cinema', 50);
   
-INSERT INTO Reserva
+INSERT INTO Reserva --Reserva 1
     (motivo, data, hora, duracao, ccUtilizador) VALUES
     ('Clube de Leitura', '2019-04-13', '10:00', 2, 15447030);
     
-INSERT INTO Reserva
+INSERT INTO Reserva --Reserva 2
     (motivo, data, hora, duracao, ccUtilizador) VALUES
     ('Workshop de Introdução à Física Quântica', '2019-04-12', '14:00', 3, 15001234);
     
-INSERT INTO Reserva
+INSERT INTO Reserva --Reserva 3
     (motivo, data, hora, duracao, ccUtilizador) VALUES
     ('Conferência sobre Bases de Dados', '2019-04-12', '11:30', 2, 15098765);
   
@@ -244,27 +244,27 @@ INSERT INTO Autoria
     (idPublicacao, idAutor) VALUES
     (6, 6);
 
-INSERT INTO Exemplar
+INSERT INTO Exemplar --Exemplar 1
     (possivelRequisitar, idSala, idPublicacao) VALUES
     (1, 4, 1);
 
-INSERT INTO Exemplar
+INSERT INTO Exemplar --Exemplar 2
     (possivelRequisitar, idSala, idPublicacao) VALUES
     (1, 4, 2);
 
-INSERT INTO Exemplar
+INSERT INTO Exemplar --Exemplar 3
     (possivelRequisitar, idSala, idPublicacao) VALUES
     (0, 4, 3);
     
-INSERT INTO Exemplar
+INSERT INTO Exemplar --Exemplar 4
     (possivelRequisitar, idSala, idPublicacao) VALUES
     (1, 4, 4);
     
-INSERT INTO Exemplar
+INSERT INTO Exemplar --Exemplar 5
     (possivelRequisitar, idSala, idPublicacao) VALUES
     (0, 4, 5);
     
-INSERT INTO Exemplar
+INSERT INTO Exemplar --Exemplar 6
     (possivelRequisitar, idSala, idPublicacao) VALUES
     (1, 4, 6);
 
@@ -372,18 +372,18 @@ INSERT INTO Equipamento
     (modelo, numeroSala) VALUES
     ('XPS 15 2019', 3);
     
-INSERT INTO Requisicao
+INSERT INTO Requisicao --Requisicao 1
     (data, hora, ccUtilizador) VALUES
     ('2019-04-13', '16:30', 15098765);
     
-INSERT INTO Requisicao
+INSERT INTO Requisicao --Requisicao 2
     (data, hora, ccUtilizador) VALUES 
     ('2019-04-12', '15:00', 15001234);
 
-INSERT INTO Requisicao
+INSERT INTO Requisicao --Requisicao 3
     (data, hora, ccUtilizador) VALUES 
     ('2019-04-20', '10:00', 15447030);
-    
+
 INSERT INTO RequisicaoDeExemplar
     (idRequisicao, idExemplar) VALUES
     (1, 1);
@@ -409,6 +409,14 @@ INSERT INTO AtoDeManutencao
 INSERT INTO AtoDeManutencao
     (ccFuncionario, nomeManutencao, idExemplar) VALUES
     (14591246, 'Limpeza', 2);
+    
+INSERT INTO AtoDeManutencao
+    (ccFuncionario, nomeManutencao, idExemplar) VALUES
+    (14591246, 'Limpeza', 3);
+    
+INSERT INTO AtoDeManutencao
+    (ccFuncionario, nomeManutencao, idExemplar) VALUES
+    (14523478, 'Limpeza', 4);
 
 INSERT INTO Publicacao --Publicacao 7
     (nome, genero, idadeMinima) VALUES
@@ -524,6 +532,10 @@ INSERT INTO Filme --Filme 5
 INSERT INTO Publicacao --Publicacao 18
     (nome, genero, idadeMinima) VALUES
     ('The Elder Scrolls V: Skyrim', 'Fantasia', 16); 
+    
+INSERT INTO Exemplar --Exemplar 7
+    (possivelRequisitar, idSala, idPublicacao) VALUES
+    (0, 3, 18);
 
 INSERT INTO Software
     (idPublicacao, versao, developer) VALUES
@@ -533,6 +545,10 @@ INSERT INTO Publicacao --Publicacao 19
     (nome, genero, idadeMinima) VALUES
     ('Starcraft', 'Real-time Strategy', 16);
     
+INSERT INTO Exemplar --Exemplar 8
+    (possivelRequisitar, idSala, idPublicacao) VALUES
+    (1, 3, 19);
+
 INSERT INTO Software
     (idPublicacao, versao, developer) VALUES
     (19, 1.0, 'Blizzard Entertainment'); 
@@ -541,6 +557,10 @@ INSERT INTO Publicacao --Publicacao 20
     (nome, genero, idadeMinima) VALUES
     ('God of War', 'Ação', 18);
     
+INSERT INTO Exemplar --Exemplar 9
+    (possivelRequisitar, idSala, idPublicacao) VALUES
+    (0, 3, 20);
+
 INSERT INTO Software
     (idPublicacao, versao, developer) VALUES
     (20, 2.0, 'Sony Santa Monica Studios');
@@ -549,6 +569,10 @@ INSERT INTO Publicacao --Publicacao 21
     (nome, genero, idadeMinima) VALUES
     ('Star Wars', 'Ficção Científica', 12);    
     
+INSERT INTO Exemplar --Exemplar 10
+    (possivelRequisitar, idSala, idPublicacao) VALUES
+    (1, 10, 21);
+
 INSERT INTO Filme --Filme 6
     (idPublicacao, realizador, estudio) VALUES
     (21, 'George Lucas', 'Lucasfilm Ltd');
@@ -557,6 +581,10 @@ INSERT INTO Publicacao --Publicacao 22
     (nome, genero, idadeMinima) VALUES
     ('Pulp Fiction', 'Drama', 16);
 
+INSERT INTO Exemplar --Exemplar 11
+    (possivelRequisitar, idSala, idPublicacao) VALUES
+    (1, 10, 22);
+
 INSERT INTO Filme --Filme 7
     (idPublicacao, realizador, estudio) VALUES
     (22, 'Quentin Tarantino', 'Miramax Studios');
@@ -564,7 +592,11 @@ INSERT INTO Filme --Filme 7
 INSERT INTO Publicacao --Publicacao 23
     (nome, genero, idadeMinima) VALUES
     ('The Beatles', 'Rock Psicadélico', 12);   
-    
+
+INSERT INTO Exemplar --Exemplar 12
+    (possivelRequisitar, idSala, idPublicacao) VALUES
+    (1, 4, 23);    
+
 INSERT INTO Album
     (idPublicacao, produtor) VALUES
     (23, 'George Martin');
@@ -580,6 +612,10 @@ INSERT INTO Publicacao --Publicacao 24
     (nome, genero, idadeMinima) VALUES
     ('Sleep Well Beast', 'Indie Rock', 12);
     
+INSERT INTO Exemplar --Exemplar 13
+    (possivelRequisitar, idSala, idPublicacao) VALUES
+    (0, 4, 24);
+
 INSERT INTO Album
     (idPublicacao, produtor) VALUES
     (24, 'Aaron Dessner');
@@ -595,6 +631,10 @@ INSERT INTO Publicacao --Publicacao 25
     (nome, genero, idadeMinima) VALUES
     ('Thriller', 'Pop', 12);
     
+INSERT INTO Exemplar --Exemplar 14
+    (possivelRequisitar, idSala, idPublicacao) VALUES
+    (1, 4, 25);
+
 INSERT INTO Album
     (idPublicacao, produtor) VALUES
     (25, 'Quincy Jones');
@@ -605,3 +645,70 @@ INSERT INTO Artista --Artista 6
 INSERT INTO Interpreta
     (idPublicacao, idArtista) VALUES
     (25, 6);
+    
+--Mais Requisições
+INSERT INTO Requisicao --Requisicao 4
+    (data, hora, ccUtilizador, diasAtraso, multa) VALUES 
+    ('2019-06-15', '14:00', 15102938, 5, 50);
+
+INSERT INTO RequisicaoDeExemplar
+    (idRequisicao, idExemplar) VALUES
+    (4, 14);
+    
+INSERT INTO Requisicao --Requisicao 5
+    (data, hora, ccUtilizador) VALUES 
+    ('2019-03-10', '15:30', 15001969);
+
+INSERT INTO RequisicaoDeExemplar
+    (idRequisicao, idExemplar) VALUES
+    (5, 12);
+    
+INSERT INTO Requisicao --Requisicao 6
+    (data, hora, ccUtilizador) VALUES 
+    ('2018-12-15', '15:59', 15001969);
+
+INSERT INTO RequisicaoDeExemplar
+    (idRequisicao, idExemplar) VALUES
+    (6, 9);
+    
+--Mais Reservas
+INSERT INTO Reserva --Reserva 4
+    (motivo, data, hora, duracao, ccUtilizador) VALUES
+    ('Beijos e Abraços', '2019-04-25', '15:00', 2, 15001969);
+  
+INSERT INTO ReservaDeSala
+    (idReserva, numeroSala) VALUES
+    (4, 7);
+    
+INSERT INTO Reserva --Reserva 5
+    (motivo, data, hora, duracao, ccUtilizador) VALUES
+    ('Stand-Up Comedy', '2019-05-01', '17:00', 2, 15102938);
+  
+INSERT INTO ReservaDeSala
+    (idReserva, numeroSala) VALUES
+    (5, 10);
+    
+INSERT INTO Reserva --Reserva 6
+    (motivo, data, hora, duracao, ccUtilizador) VALUES
+    ('Global Game Jam', '2020-01-24', '17:00', 48, 15098765);
+  
+INSERT INTO ReservaDeSala
+    (idReserva, numeroSala) VALUES
+    (6, 2);
+    
+INSERT INTO Reserva --Reserva 7
+    (motivo, data, hora, duracao, ccUtilizador) VALUES
+    ('Python @Porto', '2019-08-07', '17:30', 2, 15098765);
+  
+INSERT INTO ReservaDeSala
+    (idReserva, numeroSala) VALUES
+    (7, 7);
+    
+--Mais Atos de Manutenção
+INSERT INTO AtoDeManutencao
+    (ccFuncionario, nomeManutencao, idExemplar) VALUES
+    (15212367 , 'Restauro', 9);
+    
+INSERT INTO AtoDeManutencao
+    (ccFuncionario, nomeManutencao, idExemplar) VALUES
+    (14523478, 'Restauro', 7);
