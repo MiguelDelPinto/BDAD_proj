@@ -11,6 +11,7 @@
 
 --Add queries here:
 .read int2.sql
+.read int4.sql
 
 
 --Add triggers here:
