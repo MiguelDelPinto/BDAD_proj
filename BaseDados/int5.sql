@@ -11,9 +11,6 @@ CREATE VIEW numAtosDoFuncionario AS
     FROM AtoDeManutencao
     GROUP BY ccFuncionario, nomeManutencao;
 
-SELECT  cartaoCidadao, nomeManutencao, numAtos
+SELECT atosDoFuncionario.cartaoCidadao, nomeManutencao, numAtos
 FROM atosDoFuncionario
-JOIN numAtosDoFuncionario
-ON atosDoFuncionario.cartaoCidadao = numAtosDoFuncionario.cartaoCidadao
-   AND
-   atosDoFuncionario.nomeManutencao = numAtosDoFuncionario.nomeManutencao;
+NATURAL JOIN numAtosDoFuncionario;
