@@ -10,7 +10,7 @@
 
 
 --Add queries here:
-
+.read int2.sql
 
 
 --Add triggers here:
