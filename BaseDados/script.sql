@@ -13,3 +13,6 @@
 
 
 --Add triggers here:
+.read gatilho1_adiciona.sql
+.read gatilho1_verifica.sql
+.read gatilho1_remove.sql
