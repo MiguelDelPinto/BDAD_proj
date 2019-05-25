@@ -3,5 +3,5 @@
 .headers on
 .nullvalue NULL
 
-SELECT round(avg(duracao),2) as duracao_media
+SELECT round(avg(duracao),2) as duracaoMedia
 FROM Reserva;
