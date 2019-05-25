@@ -119,7 +119,8 @@ CREATE TABLE Publicacao(
     idPublicacao INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT NOT NULL,
     genero TEXT,
-    idadeMinima INTEGER
+    idadeMinima INTEGER,
+    quantidade INTEGER DEFAULT 0
 );
 
 CREATE TABLE Livro(
