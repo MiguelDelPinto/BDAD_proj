@@ -9,6 +9,7 @@
 .read int5.sql
 .read int6.sql
 .read int7.sql
+.read int8.sql
 
 
 --Add triggers here:
