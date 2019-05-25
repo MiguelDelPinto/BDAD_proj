@@ -4,8 +4,6 @@
 .nullvalue NULL
 
 DROP VIEW IF EXISTS publicacoesRequisitadas;
-DROP VIEW IF EXISTS artistaAlbum;
-DROP VIEW IF EXISTS autorLivro;
 
 CREATE VIEW publicacoesRequisitadas AS
     SELECT idPublicacao, nome, numRequisicoes
@@ -20,41 +18,35 @@ CREATE VIEW publicacoesRequisitadas AS
         )
     )
     ORDER BY numRequisicoes;
-    
-CREATE VIEW artistaAlbum AS
+
+SELECT realizador as criador, MAX(numRequisicoes) as numRequisicoes
+FROM Filme
+NATURAL JOIN publicacoesRequisitadas 
+UNION
+SELECT developer as criador, MAX(numRequisicoes) as numRequisicoes
+FROM Software
+NATURAL JOIN publicacoesRequisitadas
+UNION
+SELECT nome as criador, MAX(numRequisicoes) as numRequisicoes
+FROM (
     SELECT idPublicacao, nome
     FROM Album
     NATURAL JOIN (    
         SELECT idPublicacao, nome
         FROM Interpreta
         NATURAL JOIN Artista
-    );
-    
-CREATE VIEW autorLivro AS
+    )
+)
+NATURAL JOIN publicacoesRequisitadas
+UNION
+SELECT nome as criador, MAX(numRequisicoes) as numRequisicoes
+FROM (
     SELECT idPublicacao, nome
     FROM Livro
     NATURAL JOIN (
         SELECT idPublicacao, nome
         FROM Autoria
         NATURAL JOIN Autor
-    );
-
---SELECT realizador as criador, numRequisicoes 
---FROM Filme
---NATURAL JOIN publicacoesRequisitadas 
---ORDER BY numRequisicoes LIMIT 1
---UNION
---SELECT developer as criador, numRequisicoes
---FROM Software
---NATURAL JOIN publicacoesRequisitadas
---ORDER BY numRequisicoes LIMIT 1
---UNION
---SELECT nome as criador, numRequisicoes
---FROM artistaAlbum
---NATURAL JOIN publicacoesRequisitadas
---ORDER BY numRequisicoes LIMIT 1
---UNION
---SELECT nome as criador, numRequisicoes
---FROM autorLivro
---NATURAL JOIN publicacoesRequisitadas
---ORDER BY numRequisicoes LIMIT 1;
+    )
+)
+NATURAL JOIN publicacoesRequisitadas;
