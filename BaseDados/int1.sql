@@ -14,7 +14,12 @@ FROM    Pessoa
             FROM Publicacao
             NATURAL JOIN(
                 SELECT DISTINCT ccUtilizador AS cartaoCidadao, idPublicacao, multa
-                FROM RequisicaoDeExemplar, Requisicao, Exemplar
+                FROM Requisicao
+                    NATURAL JOIN(
+                        SELECT idRequisicao, idPublicacao
+                        FROM RequisicaoDeExemplar
+                            NATURAL JOIN Exemplar
+                    )
                 WHERE multa > 0
             )
         )
