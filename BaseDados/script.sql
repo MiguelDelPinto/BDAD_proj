@@ -4,6 +4,7 @@
 
 
 --Add queries here:
+.read int1.sql
 .read int2.sql
 .read int3.sql
 .read int4.sql
@@ -16,3 +17,6 @@
 
 
 --Add triggers here:
+.read gatilho1_adiciona.sql
+.read gatilho1_verifica.sql
+.read gatilho1_remove.sql
