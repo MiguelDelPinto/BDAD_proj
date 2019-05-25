@@ -1,9 +1,3 @@
---Reading settings
-.mode columns
-.headers on
-.nullvalue NULL
-
-
 --Reading the database
 .read criar.sql
 .read povoar.sql
@@ -13,6 +7,8 @@
 .read int2.sql
 .read int4.sql
 .read int5.sql
+.read int6.sql
+.read int7.sql
 
 
 --Add triggers here:

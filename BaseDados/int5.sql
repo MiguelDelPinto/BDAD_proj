@@ -1,16 +1,16 @@
-DROP VIEW IF EXISTS atosDoFuncionario;
-DROP VIEW IF EXISTS numAtosDoFuncionario;
+--Reading settings
+.mode columns
+.headers on
+.nullvalue NULL
 
-CREATE VIEW atosDoFuncionario AS
+SELECT cartaoCidadao, nomeManutencao, numAtos
+FROM (
     SELECT distinct Funcionario.cartaoCidadao as cartaoCidadao, AtoDeManutencao.nomeManutencao as nomeManutencao
     FROM Funcionario, AtoDeManutencao
-    WHERE Funcionario.cartaoCidadao = AtoDeManutencao.ccFuncionario;    
-
-CREATE VIEW numAtosDoFuncionario AS
+    WHERE Funcionario.cartaoCidadao = AtoDeManutencao.ccFuncionario
+)
+NATURAL JOIN (
     SELECT ccFuncionario as cartaoCidadao, nomeManutencao, COUNT(*) as numAtos
     FROM AtoDeManutencao
-    GROUP BY ccFuncionario, nomeManutencao;
-
-SELECT atosDoFuncionario.cartaoCidadao, nomeManutencao, numAtos
-FROM atosDoFuncionario
-NATURAL JOIN numAtosDoFuncionario;
+    GROUP BY ccFuncionario, nomeManutencao
+);

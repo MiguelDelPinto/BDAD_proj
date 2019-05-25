@@ -1,3 +1,8 @@
+--Reading settings
+.mode columns
+.headers on
+.nullvalue NULL
+
 SELECT 
     COUNT(distinct Livro.idPublicacao) AS numLivros,
     COUNT(distinct Software.idPublicacao) AS numSoftware,
