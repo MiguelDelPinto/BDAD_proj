@@ -1,7 +1,7 @@
 DROP TRIGGER IF EXISTS adicionaFuncionarioManutencao;
 
 CREATE TRIGGER adicionaFuncionarioManutencao
-AFTER INSERT ON AtoDeManutencao
+BEFORE INSERT ON AtoDeManutencao
 FOR EACH ROW
 WHEN (NEW.ccFuncionario IS NULL)
 BEGIN
