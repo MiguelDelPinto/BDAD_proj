@@ -2,9 +2,9 @@
 .mode columns
 .headers on
 .nullvalue NULL
-.width 32
+.width 32 17
 
-SELECT nome, numRequisicoes
+SELECT nome as Nome, numRequisicoes as NumeroRequisicoes
 FROM Publicacao
 NATURAL JOIN ( 
     SELECT idPublicacao, numRequisicoes

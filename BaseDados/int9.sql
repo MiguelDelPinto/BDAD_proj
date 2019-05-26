@@ -2,10 +2,10 @@
 .mode columns
 .headers on
 .nullvalue NULL
-.width 20
+.width 20 18
 
-SELECT Nome, count(*) as numRequisicoes
+SELECT nome as Nome, count(*) as NumeroRequisicoes
 FROM Pessoa
 JOIN Requisicao
 ON Requisicao.ccUtilizador = Pessoa.cartaoCidadao
-GROUP BY Nome
+GROUP BY Nome;

@@ -19,7 +19,7 @@ CREATE VIEW publicacoesRequisitadas AS
     )
     ORDER BY numRequisicoes;
 
-SELECT realizador as criador, MAX(numRequisicoes) as numRequisicoes
+SELECT realizador as Criador, MAX(numRequisicoes) as NumeroRequisicoes
 FROM Filme
 NATURAL JOIN publicacoesRequisitadas 
 UNION

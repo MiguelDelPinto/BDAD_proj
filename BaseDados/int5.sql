@@ -2,6 +2,7 @@
 .mode columns
 .headers on
 .nullvalue NULL
+.width 15 15 10
 
 SELECT cartaoCidadao, nomeManutencao, numAtos
 FROM (

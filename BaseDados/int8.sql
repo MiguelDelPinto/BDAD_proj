@@ -2,6 +2,7 @@
 .mode columns
 .headers on
 .nullvalue NULL
+.width 10 15 20 10
 
 SELECT numero, cartaoCidadao, nome, duracao
 FROM Sala
