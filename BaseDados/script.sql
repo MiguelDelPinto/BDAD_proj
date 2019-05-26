@@ -2,7 +2,9 @@
 .read criar.sql
 
 --Trigger related to updating values
+.read gatilho1_adiciona.sql
 .read gatilho2_adiciona.sql
+.read gatilho3_adiciona.sql
 
 .read povoar.sql
 
@@ -21,9 +23,11 @@
 
 
 --Add triggers here:
-.read gatilho1_adiciona.sql
 .read gatilho1_verifica.sql
 .read gatilho1_remove.sql
 
 .read gatilho2_verifica.sql
 .read gatilho2_remove.sql
+
+.read gatilho3_verifica.sql
+.read gatilho3_remove.sql

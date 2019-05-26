@@ -109,7 +109,7 @@ CREATE TABLE TipoDeManutencao(
 );
 
 CREATE TABLE AtoDeManutencao(
-    ccFuncionario INTEGER NOT NULL REFERENCES Funcionario(cartaoCidadao) ON DELETE CASCADE ON UPDATE CASCADE,
+    ccFuncionario INTEGER REFERENCES Funcionario(cartaoCidadao) ON DELETE CASCADE ON UPDATE CASCADE,
     nomeManutencao TEXT NOT NULL REFERENCES TipoDeManutencao(nome) ON DELETE CASCADE ON UPDATE CASCADE,
     idExemplar INTEGER NOT NULL REFERENCES Exemplar(idExemplar) ON DELETE CASCADE ON UPDATE CASCADE,
     PRIMARY KEY(ccFuncionario, nomeManutencao, idExemplar)
