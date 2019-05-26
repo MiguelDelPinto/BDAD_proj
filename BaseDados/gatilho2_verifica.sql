@@ -3,12 +3,13 @@
 .headers on
 .nullvalue NULL
 
-SELECT * FROM ReservaDeSala NATURAL JOIN Reserva;
+SELECT * FROM RequisicaoDeExemplar;
 
-INSERT INTO Reserva (motivo, data, hora, duracao, ccUtilizador)
-VALUES ('Clube de Politica', '2019-04-13', '10:00', 2, 15166638);
+INSERT INTO Exemplar
+    (possivelRequisitar, idSala, idPublicacao) VALUES
+    (0, 2, 1);
 
-INSERT INTO ReservaDeSala (idReserva, numeroSala)
-VALUES (8, 4);
+INSERT INTO RequisicaoDeExemplar (idExemplar, idRequisicao)
+VALUES (7, 1);
 
-SELECT * FROM ReservaDeSala NATURAL JOIN Reserva;
+SELECT * FROM RequisicaoDeExemplar;

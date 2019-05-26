@@ -1,1 +1,1 @@
-DROP TRIGGER impedeReservaSalaOcupada;
+DROP TRIGGER impedeRequisicaoDeExemplar;
