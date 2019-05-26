@@ -15,9 +15,12 @@ BEGIN
                 FROM(
                     SELECT ccFuncionario, COUNT(*) as numAtos
                     FROM AtoDeManutencao
-                    GROUP BY idExemplar
+		    WHERE ccFuncionario IS NOT NULL
+                    GROUP BY ccFuncionario
                 )
             )
             ON cartaoCidadao = ccFuncionario
-        );
+        )
+     WHERE ccFuncionario is NULL;
 END;
+
