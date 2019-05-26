@@ -254,7 +254,7 @@ INSERT INTO Exemplar --Exemplar 2
 
 INSERT INTO Exemplar --Exemplar 3
     (possivelRequisitar, idSala, idPublicacao) VALUES
-    (0, 4, 3);
+    (1, 4, 3);
     
 INSERT INTO Exemplar --Exemplar 4
     (possivelRequisitar, idSala, idPublicacao) VALUES
@@ -262,7 +262,7 @@ INSERT INTO Exemplar --Exemplar 4
     
 INSERT INTO Exemplar --Exemplar 5
     (possivelRequisitar, idSala, idPublicacao) VALUES
-    (0, 4, 5);
+    (1, 4, 5);
     
 INSERT INTO Exemplar --Exemplar 6
     (possivelRequisitar, idSala, idPublicacao) VALUES
@@ -535,7 +535,7 @@ INSERT INTO Publicacao --Publicacao 18
     
 INSERT INTO Exemplar --Exemplar 7
     (possivelRequisitar, idSala, idPublicacao) VALUES
-    (0, 3, 18);
+    (1, 3, 18);
 
 INSERT INTO Software
     (idPublicacao, versao, developer) VALUES
@@ -559,7 +559,7 @@ INSERT INTO Publicacao --Publicacao 20
     
 INSERT INTO Exemplar --Exemplar 9
     (possivelRequisitar, idSala, idPublicacao) VALUES
-    (0, 3, 20);
+    (1, 3, 20);
 
 INSERT INTO Software
     (idPublicacao, versao, developer) VALUES
@@ -614,7 +614,7 @@ INSERT INTO Publicacao --Publicacao 24
     
 INSERT INTO Exemplar --Exemplar 13
     (possivelRequisitar, idSala, idPublicacao) VALUES
-    (0, 4, 24);
+    (1, 4, 24);
 
 INSERT INTO Album
     (idPublicacao, produtor) VALUES

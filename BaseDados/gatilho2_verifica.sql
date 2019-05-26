@@ -10,6 +10,6 @@ INSERT INTO Exemplar
     (0, 2, 1);
 
 INSERT INTO RequisicaoDeExemplar (idExemplar, idRequisicao)
-VALUES (7, 1);
+VALUES (15, 1);
 
 SELECT * FROM RequisicaoDeExemplar;
