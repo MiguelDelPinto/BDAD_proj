@@ -670,6 +670,14 @@ INSERT INTO Requisicao --Requisicao 6
 INSERT INTO RequisicaoDeExemplar
     (idRequisicao, idExemplar) VALUES
     (6, 9);
+
+INSERT INTO Requisicao --Requisicao 7
+    (data, hora, ccUtilizador) VALUES 
+    ('2019-03-11', '15:30', 15447030);
+
+INSERT INTO RequisicaoDeExemplar
+    (idRequisicao, idExemplar) VALUES
+    (7, 12);
     
 --Mais Reservas
 INSERT INTO Reserva --Reserva 4

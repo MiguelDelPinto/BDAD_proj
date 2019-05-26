@@ -2,6 +2,7 @@
 .mode columns
 .headers on
 .nullvalue NULL
+.width 32
 
 SELECT nome, numRequisicoes
 FROM Publicacao
@@ -14,4 +15,4 @@ NATURAL JOIN (
         GROUP BY idExemplar
     )
 )
-ORDER BY numRequisicoes LIMIT 10;
+ORDER BY numRequisicoes DESC LIMIT 10;
