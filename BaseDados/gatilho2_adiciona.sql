@@ -12,6 +12,6 @@ BEGIN
         WHERE
                 Exemplar.idExemplar = NEW.idExemplar AND Exemplar.possivelRequisitar = 1
      ) ISNULL)
-     THEN raise(ABORT, 'O exemplar ja foi requisitado.')
+     THEN raise(ABORT, 'Não é possivel requisitar o exemplar.')
      END;
 END;
