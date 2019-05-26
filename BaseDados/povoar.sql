@@ -679,6 +679,30 @@ INSERT INTO RequisicaoDeExemplar
     (idRequisicao, idExemplar) VALUES
     (7, 12);
     
+INSERT INTO Requisicao --Requisicao 8
+    (data, hora, ccUtilizador) VALUES 
+    ('2019-03-11', '15:30', 15447030);
+
+INSERT INTO RequisicaoDeExemplar
+    (idRequisicao, idExemplar) VALUES
+    (8, 11);
+    
+INSERT INTO Requisicao --Requisicao 9
+    (data, hora, ccUtilizador) VALUES 
+    ('2018-12-20', '11:30', 15001969);
+
+INSERT INTO RequisicaoDeExemplar
+    (idRequisicao, idExemplar) VALUES
+    (9, 5);
+
+INSERT INTO Requisicao --Requisicao 10
+    (data, hora, ccUtilizador) VALUES 
+    ('2019-05-25', '11:10', 15447030);
+
+INSERT INTO RequisicaoDeExemplar
+    (idRequisicao, idExemplar) VALUES
+    (10, 5);
+    
 --Mais Reservas
 INSERT INTO Reserva --Reserva 4
     (motivo, data, hora, duracao, ccUtilizador) VALUES

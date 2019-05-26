@@ -2,11 +2,12 @@
 .mode columns
 .headers on
 .nullvalue NULL
+.width 25 17
 
 DROP VIEW IF EXISTS publicacoesRequisitadas;
 
 CREATE VIEW publicacoesRequisitadas AS
-    SELECT idPublicacao, nome, numRequisicoes
+    SELECT idPublicacao, nome as nomePublicacao, numRequisicoes
     FROM Publicacao
     NATURAL JOIN (
         SELECT idPublicacao, numRequisicoes
@@ -48,5 +49,5 @@ FROM (
         FROM Autoria
         NATURAL JOIN Autor
     )
-)
+) 
 NATURAL JOIN publicacoesRequisitadas;
